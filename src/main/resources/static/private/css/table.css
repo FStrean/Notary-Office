@@ -1,0 +1,121 @@
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table td {
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
+
+::selection { background: #5f74a0; color: #fff; }
+::-moz-selection { background: #5f74a0; color: #fff; }
+::-webkit-selection { background: #5f74a0; color: #fff; }
+
+br { display: block; line-height: 1.6em; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+input, textarea {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong, b { font-weight: bold; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+/** page structure **/
+#wrapper {
+    display: block;
+    background: #fff;
+    margin: 0 auto;
+    -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+    padding: 150px 17px 10px;
+}
+
+#keywords {
+    margin: 0 auto;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+td, th {
+    border: 1px solid #999;
+    padding: 20px;
+}
+
+tr:hover {
+    background-color: #d2d2d2;
+    cursor: pointer;
+}
+
+#keywords thead {
+    cursor: pointer;
+    background: #c9dff0;
+}
+#keywords thead tr th {
+    font-weight: bold;
+    padding: 12px 30px;
+    padding-left: 42px;
+}
+#keywords thead tr th span {
+    padding-right: 20px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+}
+
+#keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
+    background: #acc8dd;
+}
+
+#keywords thead tr th.headerSortUp span {
+    background-image: url('https://i.imgur.com/SP99ZPJ.png');
+}
+#keywords thead tr th.headerSortDown span {
+    background-image: url('https://i.imgur.com/RkA9MBo.png');
+}
+
+
+#keywords tbody tr {
+    color: #555;
+}
+#keywords tbody tr td {
+    text-align: center;
+    padding: 15px 10px;
+}
+#keywords tbody tr td.lalign {
+    text-align: left;
+}
+
+.bn59 {
+    background-color: #676767;
+    border: 1px solid rgba(54, 54, 54, 0.6);
+    font-weight: 600;
+    position: relative;
+    outline: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 45px;
+    width: 130px;
+    opacity: 1;
+    font-size: 18px;
+    color: white;
+}
+
+.table_heading {
+    font-size: 24px;
+    padding-bottom: 30px;
+}

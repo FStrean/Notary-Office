@@ -1,0 +1,59 @@
+
+.selectBox select {
+    width: 94%;
+
+    background-color: #17c;
+    color: #fff;
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em;
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button;
+    margin-left: 13px;
+}
+
+.overSelect {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+#mySelectOptions {
+    display: none;
+    border: 0.5px #7c7c7c solid;
+    background-color: #ffffff;
+    max-height: 150px;
+    overflow-y: scroll;
+}
+
+.check_box {
+    position: relative;
+    top: 15px;
+    left: 150px;
+}
+
+
+#mySelectOptions label {
+    display: block;
+    font-weight: normal;
+    white-space: nowrap;
+    min-height: 1.2em;
+    background-color: #ffffff00;
+    padding: 0 2.25rem 0 .75rem;
+    /* padding: .375rem 2.25rem .375rem .75rem; */
+}
+
+#mySelectOptions label:hover {
+    background-color: #1e90ff;
+}
+
+.check_box {
+    width:200px;
+}

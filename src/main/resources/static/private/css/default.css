@@ -1,0 +1,35 @@
+html { overflow-y: scroll; }
+body {
+    background: #eee url('https://i.imgur.com/eeQeRmk.png'); /* https://subtlepatterns.com/weave/ */
+    font-size: 62.5%;
+    line-height: 1;
+    color: #585858;
+    padding: 22px 10px;
+    padding-bottom: 55px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #048bd9;
+    font-family: 'Poppins',sans-serif;
+}
+
+
+#description {
+    width: 350px;
+    height: 100px;
+    margin-left: 2px;
+    font-size: 0.95em;
+    padding: 16px;
+    resize: none;
+}
+
+.user_info {
+    color: #fff;
+    font-size: 1.4em;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Клиенты</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+  <link th:href="@{../private/css/default.css}" rel="stylesheet" />
+  <link th:href="@{../private/css/nav.css}" rel="stylesheet" />
+  <link th:href="@{../private/css/table.css}" rel="stylesheet" />
+  <link th:href="@{../private/css/popup.css}" rel="stylesheet" />
+  <link th:href="@{../private/css/table-buttons.css}" rel="stylesheet" />
+
+  <script src="private/js/popup.js"></script>
+  <script>
+    function makeDealButtonClicked(value) {
+      location.href = "/deals/" + value;
+    }
+  </script>
+
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container container">
+    <input type="checkbox" name="" id="">
+    <div class="hamburger-lines">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </div>
+    <ul class="menu-items">
+      <li><a th:href="@{/clients}">Клиенты</a></li>
+      <li><a th:href="@{/deals}">Сделки</a></li>
+      <li><a th:href="@{/services}">Комплекс услуг</a></li>
+      <li><a th:href="@{/users}">Пользователи</a></li>
+      <li><a th:href="@{/logout}">Выйти</a></li>
+    </ul>
+    <h1 class="logo">Нотариус</h1>
+  </div>
+</nav>
+
+<div id="wrapper">
+  <h1 class="table_heading">Выберите того, с кем хотите заключить сделку</h1>
+
+  <table class="deals_table" id="keywords" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+      <th><span>Идентификационный номер</span></th>
+      <th><span>Имя</span></th>
+      <th><span>Фамилия</span></th>
+      <th><span>Вид деятельности</span></th>
+      <th><span>Адрес</span></th>
+      <th><span>Номер телефона</span></th>
+      <th><span>Действия</span></th>
+    </tr>
+    </thead>
+      <tbody>
+        <tr th:each="client: ${clients}"  th:id="${client.id}">
+          <td th:text="${client.id}"></td>
+          <td th:text="${client.firstName}"></td>
+          <td th:text="${client.lastName}"></td>
+          <td th:text="${client.job}"></td>
+          <td th:text="${client.address}"></td>
+          <td th:text="${client.phoneNumber}"></td>
+          <td><a class="table-button primary edit" th:id="${client.id}"
+                 onclick="makeDealButtonClicked(this.getAttribute('id'))">Заключить сделку</a>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+  <div class="button add-button">
+    Добавить
+  </div>
+</div>
+<div class="center modal-box">
+  <!--cancel button-->
+  <div class="fas fa-times"></div>
+
+  <!--Registration form-->
+  <div class="form_container">
+    <form name="form" th:action="@{/clients/register/save}" th:object="${client}" method="post">
+      <div class="form_wrap">
+        <div class="form_item">
+          <label>Имя</label>
+          <input type="text" placeholder="Введите имя"  th:field="*{firstName}">
+        </div>
+      </div>
+      <div class="form_wrap">
+        <div class="form_item">
+          <label>Фамилия</label>
+          <input type="text" placeholder="Введите фамилию"  th:field="*{lastName}">
+        </div>
+      </div>
+      <div class="form_wrap">
+        <div class="form_item">
+          <label>Вид деятельности</label>
+          <input type="text" placeholder="Введите вид деятельности"  th:field="*{job}">
+        </div>
+      </div>
+      <div class="form_wrap">
+        <div class="form_item">
+          <label>Адрес</label>
+          <input type="text" placeholder="Введите адрес"  th:field="*{address}">
+        </div>
+      </div>
+      <div class="form_wrap">
+        <div class="form_item">
+          <label>Номер телефона</label>
+          <input type="text" placeholder="Введите номер телефона"  th:field="*{phoneNumber}">
+        </div>
+      </div>
+      <div class="btn">
+        <input type="submit" value="Продолжить">
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

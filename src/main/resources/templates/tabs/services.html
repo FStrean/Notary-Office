@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Комплекс услуг</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link th:href="@{../private/css/default.css}" rel="stylesheet" />
+    <link th:href="@{../private/css/nav.css}" rel="stylesheet" />
+    <link th:href="@{../private/css/table.css}" rel="stylesheet" />
+    <link th:href="@{../private/css/popup.css}" rel="stylesheet" />
+    <link th:href="@{../private/css/table-buttons.css}" rel="stylesheet" />
+
+    <script src="private/js/popup.js"></script>
+
+    <script>
+      function editButtonClicked(value) {
+        location.href = "/services/update/" + value;
+      }
+      function deleteButtonClicked(data) {
+        var url = "services/delete"
+        var form = document.createElement("form");
+        document.body.appendChild(form);
+        form.method = 'post';
+        form.action = url;
+
+        var input = document.createElement("input");
+        input.type = 'hidden';
+        input.name = "id";
+        input.value = data;
+        form.appendChild(input);
+        form.submit();
+      }
+    </script>
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container container">
+        <input type="checkbox" name="" id="">
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <ul class="menu-items">
+          <li><a th:href="@{/clients}">Клиенты</a></li>
+          <li><a th:href="@{/deals}">Сделки</a></li>
+          <li><a th:href="@{/services}">Комплекс услуг</a></li>
+          <li><a th:href="@{/users}">Пользователи</a></li>
+          <li><a th:href="@{/logout}">Выйти</a></li>
+        </ul>
+        <h1 class="logo">Нотариус</h1>
+      </div>
+    </nav>
+
+    <div id="wrapper">
+      <h1 class="table_heading">Комплекс услуг</h1>
+
+      <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+          <th><span>Идентификационный номер</span></th>
+          <th><span>Название услуги</span></th>
+          <th><span>Описание</span></th>
+          <th><span>Действия</span></th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr th:each="service: ${services}">
+            <td th:text="${service.id}"></td>
+            <td th:text="${service.name}"></td>
+            <td th:text="${service.description}"></td>
+            <td><a class="table-button primary edit" th:id="${service.id}"
+                   onclick="editButtonClicked(this.getAttribute('id'))">Изменить</a>
+              <a class="table-button primary delete" th:id="${service.id}"
+                 onclick="deleteButtonClicked(this.getAttribute('id'))">
+                <i class="fa fa-trash"></i> Удалить</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="button add-button">
+        Добавить услугу
+      </div>
+    </div>
+    <div class="center modal-box">
+      <!--cancel button-->
+      <div class="fas fa-times"></div>
+
+      <!--Registration form-->
+      <div class="form_container">
+        <form name="form" th:action="@{/services/add/save}" th:object="${service}" method="post">
+
+          <div class="form_wrap">
+            <div class="form_item">
+              <label>Название услуги</label>
+              <input type="text" th:field="*{name}">
+            </div>
+          </div>
+          <div class="form_wrap">
+            <div class="form_item">
+              <label>Описание
+                <textarea rows="15" cols="54" type="text" th:field="*{description}"></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="btn">
+            <input type="submit" value="Продолжить">
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

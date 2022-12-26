@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta charset="UTF-8">
+  <title>Пользователи</title>
+  <link th:href="@{../private/css/default.css}" rel="stylesheet" />
+  <link th:href="@{../private/css/nav.css}" rel="stylesheet" />
+  <link th:href="@{../private/css/table.css}" rel="stylesheet" />
+  <link th:href="@{../private/css/table-buttons.css}" rel="stylesheet" />
+
+  <script>
+    function editButtonClicked(value) {
+      location.href = "/users/update/" + value;
+    }
+  </script>
+
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container container">
+    <input type="checkbox" name="" id="">
+    <div class="hamburger-lines">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </div>
+    <ul class="menu-items">
+      <li><a th:href="@{/clients}">Клиенты</a></li>
+      <li><a th:href="@{/deals}">Сделки</a></li>
+      <li><a th:href="@{/services}">Комплекс услуг</a></li>
+      <li><a th:href="@{/users}">Пользователи</a></li>
+      <li><a th:href="@{/logout}">Выйти</a></li>
+    </ul>
+    <h1 class="logo">Нотариус</h1>
+  </div>
+</nav>
+
+<div id="wrapper">
+  <h1 class="table_heading">Все сотрудники</h1>
+
+  <table class="deals_table" id="keywords" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+      <th><span>Идентификационный номер</span></th>
+      <th><span>Имя</span></th>
+      <th><span>Фамилия</span></th>
+      <th><span>Электронная почта</span></th>
+      <th><span>Действия</span></th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr th:each="user: ${users}"  th:id="${user.id}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.email}"></td>
+        <td><a class="table-button primary edit" th:id="${user.id}"
+               onclick="editButtonClicked(this.getAttribute('id'))">Изменить роли</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
