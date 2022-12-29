@@ -4,8 +4,8 @@ table {
 }
 
 table td {
-    word-wrap: break-word;         /* All browsers since IE 5.5+ */
-    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 ::selection { background: #5f74a0; color: #fff; }
@@ -35,7 +35,6 @@ strong, b { font-weight: bold; }
 table { border-collapse: collapse; border-spacing: 0; }
 img { border: 0; max-width: 100%; }
 
-/** page structure **/
 #wrapper {
     display: block;
     background: #fff;

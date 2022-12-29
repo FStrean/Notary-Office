@@ -5,7 +5,6 @@
     transform: translate(-50%, -50%);
 }
 
-/* homepage popup button */
 .button{
     font-size: 22px;
     border-radius: 5px;
@@ -23,7 +22,6 @@
     transform: translateX(-100%);
 }
 
-/* popup box */
 .modal-box{
     top: 40%;
     opacity: 0;
@@ -47,7 +45,6 @@
     transition: .4s;
 }
 
-/* cancel button */
 .modal-box .fa-times{
     position: absolute;
     top: 0;
@@ -68,7 +65,6 @@
     font-size: 22px;
 }
 
-/* design the form */
 .form_container{
     background: #fff;
     padding: 30px;
@@ -97,7 +93,7 @@
     display: block;
     margin-bottom: 5px;
 }
-/* input box and select box */
+
 .form_container .form_item input,
 .form_container .form_item select{
     width: 100%;
@@ -106,10 +102,8 @@
     padding: 10px;
     font-size: 16px;
 }
-/* submit button */
+
 .form_container .btn input[type="submit"]{
-
-
     background: #6271f0;
     cursor: pointer;
     color: #fff;

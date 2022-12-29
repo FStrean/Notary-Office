@@ -1,7 +1,6 @@
 
 .selectBox select {
     width: 94%;
-
     background-color: #17c;
     color: #fff;
     font-size: inherit;
@@ -29,7 +28,6 @@
     background-color: #ffffff;
     max-height: 150px;
     overflow-y: scroll;
-
     flex-direction: column;
     width: 94%;
     margin-left: 13px;

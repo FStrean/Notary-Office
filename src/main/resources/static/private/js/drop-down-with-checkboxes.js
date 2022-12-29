@@ -11,18 +11,13 @@ function initMultiselect() {
 
         do {
             if (targetElement === flyoutElement) {
-                // This is a click inside. Do nothing, just return.
-                //console.log('click inside');
                 return;
             }
 
-            // Go up the DOM
             targetElement = targetElement.parentNode;
         } while (targetElement);
 
-        // This is a click outside.
         toggleCheckboxArea(true);
-        //console.log('click outside');
     });
 }
 
