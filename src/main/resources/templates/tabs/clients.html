@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Клиенты</title>
@@ -8,13 +8,13 @@
 
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-  <link th:href="@{../private/css/default.css}" rel="stylesheet" />
-  <link th:href="@{../private/css/nav.css}" rel="stylesheet" />
-  <link th:href="@{../private/css/table.css}" rel="stylesheet" />
-  <link th:href="@{../private/css/popup.css}" rel="stylesheet" />
-  <link th:href="@{../private/css/table-buttons.css}" rel="stylesheet" />
+  <link th:href="@{/private/css/default.css}" rel="stylesheet" />
+  <link th:href="@{/private/css/nav.css}" rel="stylesheet" />
+  <link th:href="@{/private/css/table.css}" rel="stylesheet" />
+  <link th:href="@{/private/css/popup.css}" rel="stylesheet" />
+  <link th:href="@{/private/css/table-buttons.css}" rel="stylesheet" />
 
-  <script src="private/js/popup.js"></script>
+  <script th:src="@{/private/js/popup.js}"></script>
   <script>
     function makeDealButtonClicked(value) {
       location.href = "/deals/" + value;
@@ -62,32 +62,37 @@
       <form name="form" th:action="@{/clients/register/save}" th:object="${client}" method="post">
         <div class="form_wrap">
           <div class="form_item">
-            <label>Имя</label>
-            <input type="text" placeholder="Введите имя"  th:field="*{firstName}">
+            <label>Имя
+              <input type="text" placeholder="Введите имя"  th:field="*{firstName}">
+            </label>
           </div>
         </div>
         <div class="form_wrap">
           <div class="form_item">
-            <label>Фамилия</label>
-            <input type="text" placeholder="Введите фамилию"  th:field="*{lastName}">
+            <label>Фамилия
+              <input type="text" placeholder="Введите фамилию"  th:field="*{lastName}">
+            </label>
           </div>
         </div>
         <div class="form_wrap">
           <div class="form_item">
-            <label>Вид деятельности</label>
-            <input type="text" placeholder="Введите вид деятельности"  th:field="*{job}">
+            <label>Вид деятельности
+              <input type="text" placeholder="Введите вид деятельности"  th:field="*{job}">
+            </label>
           </div>
         </div>
         <div class="form_wrap">
           <div class="form_item">
-            <label>Адрес</label>
-            <input type="text" placeholder="Введите адрес"  th:field="*{address}">
+            <label>Адрес
+              <input type="text" placeholder="Введите адрес"  th:field="*{address}">
+            </label>
           </div>
         </div>
         <div class="form_wrap">
           <div class="form_item">
-            <label>Номер телефона</label>
-            <input type="text" placeholder="Введите номер телефона"  th:field="*{phoneNumber}">
+            <label>Номер телефона
+              <input type="text" placeholder="Введите номер телефона"  th:field="*{phoneNumber}">
+            </label>
           </div>
         </div>
         <div class="btn">
