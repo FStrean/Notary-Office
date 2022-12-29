@@ -5,15 +5,13 @@
     background-color: #17c;
     color: #fff;
     font-size: inherit;
-    padding: .5em;
-    padding-right: 2.5em;
+    padding: .5em 2.5em .5em .5em;
     border: 0;
-    margin: 0;
     border-radius: 3px;
-    text-indent: 0.01px;
+    text-indent: 0;
     text-overflow: '';
     -webkit-appearance: button;
-    margin-left: 13px;
+    margin: 0 0 0 13px;
 }
 
 .overSelect {
@@ -27,33 +25,31 @@
 
 #mySelectOptions {
     display: none;
-    border: 0.5px #7c7c7c solid;
+    border: 1px #7c7c7c solid;
     background-color: #ffffff;
     max-height: 150px;
     overflow-y: scroll;
+
+    flex-direction: column;
+    width: 94%;
+    margin-left: 13px;
 }
 
-.check_box {
-    position: relative;
-    top: 15px;
-    left: 150px;
-}
 
-
-#mySelectOptions label {
-    display: block;
-    font-weight: normal;
-    white-space: nowrap;
-    min-height: 1.2em;
-    background-color: #ffffff00;
-    padding: 0 2.25rem 0 .75rem;
-    /* padding: .375rem 2.25rem .375rem .75rem; */
-}
-
-#mySelectOptions label:hover {
+#mySelectOptions .element:hover {
     background-color: #1e90ff;
 }
 
 .check_box {
-    width:200px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.check_label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.element {
+    display: flex;
 }

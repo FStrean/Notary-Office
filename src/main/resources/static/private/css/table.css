@@ -28,7 +28,8 @@ input, textarea {
 }
 
 blockquote, q { quotes: none; }
-blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none; }
 strong, b { font-weight: bold; }
 
 table { border-collapse: collapse; border-spacing: 0; }
@@ -44,9 +45,8 @@ img { border: 0; max-width: 100%; }
 }
 
 #keywords {
-    margin: 0 auto;
     font-size: 1.2em;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
 }
 
 td, th {
@@ -65,8 +65,7 @@ tr:hover {
 }
 #keywords thead tr th {
     font-weight: bold;
-    padding: 12px 30px;
-    padding-left: 42px;
+    padding: 12px 30px 12px 42px;
 }
 #keywords thead tr th span {
     padding-right: 20px;

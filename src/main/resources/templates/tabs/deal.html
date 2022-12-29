@@ -56,11 +56,11 @@
           <div class="overSelect"></div>
         </div>
         <div id="mySelectOptions">
-          <label class="check_label" th:each="service : ${services}">
+          <div class="element" th:each="service : ${services}">
             <input class="check_box" type="checkbox" onchange="checkboxStatusChange()"
-                   th:text="${service.getName()}" th:id="${service.getId()}"
-                   th:value="${service.getName()}" th:field="*{serviceDtoList}"/>
-          </label>
+                   th:id="${service.getId()}" th:value="${service.getName()}" th:field="*{serviceDtoList}"/>
+            <label class="check_label" th:for="${service.getId()}" th:text="${service.getName()}"></label>
+          </div>
         </div>
       </div>
     </div>

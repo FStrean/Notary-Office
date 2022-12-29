@@ -6,11 +6,11 @@ function initMultiselect() {
     checkboxStatusChange();
 
     document.addEventListener("click", function(evt) {
-        var flyoutElement = document.getElementById('myMultiselect'),
+        let flyoutElement = document.getElementById('myMultiselect'),
             targetElement = evt.target; // clicked element
 
         do {
-            if (targetElement == flyoutElement) {
+            if (targetElement === flyoutElement) {
                 // This is a click inside. Do nothing, just return.
                 //console.log('click inside');
                 return;
@@ -27,19 +27,19 @@ function initMultiselect() {
 }
 
 function checkboxStatusChange() {
-    var multiselect = document.getElementById("mySelectLabel");
-    var multiselectOption = multiselect.getElementsByTagName('option')[0];
+    let multiselect = document.getElementById("mySelectLabel");
+    let multiselectOption = multiselect.getElementsByTagName('option')[0];
 
-    var values = [];
-    var checkboxes = document.getElementById("mySelectOptions");
-    var checkedCheckboxes = checkboxes.querySelectorAll('input[type=checkbox]:checked');
+    let values = [];
+    let checkboxes = document.getElementById("mySelectOptions");
+    let checkedCheckboxes = checkboxes.querySelectorAll('input[type=checkbox]:checked');
 
     for (const item of checkedCheckboxes) {
-        var checkboxValue = item.getAttribute('value');
+        let checkboxValue = item.getAttribute('value');
         values.push(checkboxValue);
     }
 
-    var dropdownValue = "Ничего не выбрано";
+    let dropdownValue = "Ничего не выбрано";
     if (values.length > 0) {
         dropdownValue = values.join(', ');
     }
@@ -48,11 +48,11 @@ function checkboxStatusChange() {
 }
 
 function toggleCheckboxArea(onlyHide = false) {
-    var checkboxes = document.getElementById("mySelectOptions");
-    var displayValue = checkboxes.style.display;
+    let checkboxes = document.getElementById("mySelectOptions");
+    let displayValue = checkboxes.style.display;
 
-    if (displayValue != "block") {
-        if (onlyHide == false) {
+    if (displayValue !== "block") {
+        if (onlyHide === false) {
             checkboxes.style.display = "block";
         }
     } else {

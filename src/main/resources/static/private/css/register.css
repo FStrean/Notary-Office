@@ -41,9 +41,8 @@
     padding: 12px;
 }
 
-.login input {
+.login input[type="text"], .login input[type="submit"] {
     box-sizing: border-box;
-    display: block;
     width: 100%;
     border-width: 1px;
     border-style: solid;
