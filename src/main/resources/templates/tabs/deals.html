@@ -10,59 +10,41 @@
 
 </head>
 <body>
-<nav class="navbar">
-  <div class="navbar-container container">
-    <input type="checkbox" name="" id="">
-    <div class="hamburger-lines">
-      <span class="line line1"></span>
-      <span class="line line2"></span>
-      <span class="line line3"></span>
-    </div>
-    <ul class="menu-items">
-      <li><a th:href="@{/clients}">Клиенты</a></li>
-      <li><a th:href="@{/deals}">Сделки</a></li>
-      <li><a th:href="@{/services}">Комплекс услуг</a></li>
-      <li><a th:href="@{/users}">Пользователи</a></li>
-      <li><a th:href="@{/logout}">Выйти</a></li>
-    </ul>
-    <h1 class="logo">Нотариус</h1>
-  </div>
-</nav>
+  <div th:replace="~{topnav.html :: navbar}"></div>
 
-<div id="wrapper">
-  <h1  class="table_heading">Сделки</h1>
+  <div id="wrapper">
+    <h1  class="table_heading">Сделки</h1>
 
-  <table class="deals_table" id="keywords" cellspacing="0" cellpadding="0">
-    <thead>
-    <tr>
-      <th><span>Идентификационный номер</span></th>
-      <th><span>Сумма</span></th>
-      <th><span>Комиссия</span></th>
-      <th><span>Описание</span></th>
-      <th><span>Телефон клиента</span></th>
-      <th><span>Имя, фамилия клиента</span></th>
-      <th><span>Названия услуг</span></th>
-    </tr>
-    </thead>
-    <tbody>
-    <th:block th:each="deal: ${deals}">
+    <table class="deals_table" id="keywords" cellspacing="0" cellpadding="0">
+      <thead>
       <tr>
-        <td th:text="${deal.id}"></td>
-        <td th:text="${deal.amount}"></td>
-        <td th:text="${deal.commission_fees}"></td>
-        <td th:text="${deal.description}"></td>
-        <td th:text="${deal.clientPhoneNumber}"></td>
-        <td th:text="${deal.clientNameSurname}"></td>
-        <td>
-          <p th:each="service : ${deal.getServiceDtoList()}">
-            <span th:text="${service}"></span>
-          </p>
-        </td>
-
+        <th><span>Идентификационный номер</span></th>
+        <th><span>Сумма</span></th>
+        <th><span>Комиссия</span></th>
+        <th><span>Описание</span></th>
+        <th><span>Телефон клиента</span></th>
+        <th><span>Имя, фамилия клиента</span></th>
+        <th><span>Названия услуг</span></th>
       </tr>
-    </th:block>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+      <th:block th:each="deal: ${deals}">
+        <tr>
+          <td th:text="${deal.id}"></td>
+          <td th:text="${deal.amount}"></td>
+          <td th:text="${deal.commission_fees}"></td>
+          <td th:text="${deal.description}"></td>
+          <td th:text="${deal.clientPhoneNumber}"></td>
+          <td th:text="${deal.clientNameSurname}"></td>
+          <td>
+            <p th:each="service : ${deal.getServiceDtoList()}">
+              <span th:text="${service}"></span>
+            </p>
+          </td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
